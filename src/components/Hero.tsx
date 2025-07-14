@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowDownCircle } from "lucide-react";
 import Link from "next/link";
+import { ArrowDownCircle } from "lucide-react";
 
 export default function Hero() {
   return (
