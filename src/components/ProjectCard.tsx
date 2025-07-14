@@ -1,7 +1,20 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
-export default function ProjectCard({ project }: { project: any }) {
+type Project = {
+  title: string;
+  year: number;
+  tags: string[];
+  description?: string;
+  organization?: string;
+  context?: string;
+  objective?: string;
+  solution?: string;
+  status?: string;
+  technologies?: string[];
+};
+
+export default function ProjectCard({ project }: { project: Project }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
