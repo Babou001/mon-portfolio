@@ -11,7 +11,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Salut, moi c'est Babou
+        Salut, moi c&apos;est Babou
       </motion.h1>
       <motion.p
         className="max-w-xl text-lg text-gray-300 mb-10"
