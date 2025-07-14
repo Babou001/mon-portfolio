@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 
 type Formation = {
@@ -11,8 +12,8 @@ type Formation = {
 const formations: Formation[] = [
   {
     degree: "Licence Informatique",
-    institution: "Aix-Marseille Université",
-    years: "2019-2022",
+    institution: "Aix‑Marseille Université",
+    years: "2019‑2022",
     focus: "Informatique générale",
     courses: [
       "Réseaux",
@@ -26,7 +27,7 @@ const formations: Formation[] = [
   {
     degree: "Master Recherche IA & Machine/Deep Learning",
     institution: "AMU & École Centrale de Marseille",
-    years: "2022-2024",
+    years: "2022‑2024",
     focus: "Recherche en intelligence artificielle",
     courses: [
       "Probabilités & Statistiques avancées",
@@ -41,7 +42,7 @@ const formations: Formation[] = [
   {
     degree: "Mastère Chef de Projet IA",
     institution: "Groupe Gema — IA School",
-    years: "2024-2025",
+    years: "2024‑2025",
     focus: "Gestion de projet IA",
     courses: [
       "Cloud (AWS)",
@@ -64,14 +65,16 @@ function FormationCard({ formation }: { formation: Formation }) {
       className="border border-white/10 rounded-2xl p-6 backdrop-blur-lg bg-white/5 shadow-lg"
     >
       <h3 className="text-lg font-semibold mb-1">{formation.degree}</h3>
-      <p className="text-sm text-gray-300 italic mb-1">{formation.institution}</p>
+      <p className="text-sm text-gray-300 italic mb-1">
+        {formation.institution}
+      </p>
       <p className="text-xs text-indigo-300 mb-4">{formation.years}</p>
 
       <p className="text-sm text-gray-300 mb-2">
         <strong>Focus&nbsp;:</strong> {formation.focus}
       </p>
 
-      {formation.courses?.length && (
+      {formation.courses && (
         <div className="flex flex-wrap gap-2 mt-2">
           {formation.courses.map((c) => (
             <span
