@@ -24,7 +24,7 @@ export default function ProjectCard({ project }: { project: Project }) {
     >
       <Card className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-xl p-6">
         <CardContent>
-          <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+          <h3 className="text-xl text-gray-300 font-semibold mb-2">{project.title}</h3>
           {project.organization && (
             <p className="text-xs italic text-gray-400 mb-2">{project.organization}</p>
           )}
