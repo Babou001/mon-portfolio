@@ -14,14 +14,14 @@ export default function Hero() {
         Salut, moi c&apos;est Babou
       </motion.h1>
 
-      <motion.h2
+      <motion.h3
         className="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Inénieur IA  |  Data Scientist
-      </motion.h2>
+        Ingénieur IA  |  Data Scientist
+      </motion.h3>
       <motion.p
         className="max-w-xl text-lg text-gray-300 mb-10"
         initial={{ opacity: 0 }}
