@@ -1,0 +1,306 @@
+export const fr = {
+  nav: {
+    home: "Accueil",
+    skills: "Compétences",
+    formations: "Formations",
+    projects: "Projets",
+    contact: "Contact",
+  },
+  hero: {
+    title: "Babou Seye",
+    role: "Ingénieur IA | Data Scientist",
+    subtitle: "Ingénieur IA spécialisé en Gen AI (LLM)",
+    description: "Je conçois des systèmes d'IA génératifs et des agents intelligents qui transforment vos données en solutions concrètes.",
+    cta: {
+      projects: "Voir mes projets",
+      contact: "Me contacter",
+    },
+  },
+  skills: {
+    title: "Compétences",
+    subtitle: "Vue d'ensemble de mes compétences techniques en IA",
+    llmRag: "LLM & RAG",
+    computerVision: "Computer Vision",
+    aiAgents: "Agents IA",
+    dataOps: "Data Engineering & Ops",
+    machineLearning: "Machine Learning",
+    deepLearning: "Deep Learning",
+    items: {
+      llmRag: [
+        "LangChain / LangGraph",
+        "OpenAI / Azure OpenAI",
+        "Llama.cpp, ollama",
+        "ChromaDB, Weaviate, RedisVector",
+        "Prompt engineering & eval",
+      ],
+      computerVision: [
+        "YOLOv8 / RT-DETR",
+        "OpenCV & cv2 cuda",
+        "torchvision / ultralytics",
+        "Fine-tuning, label-studio",
+      ],
+      aiAgents: [
+        "Tool routing (ToolSelector)",
+        "SQL & Pandas agents",
+        "Multi-modal agents (vision + text)",
+        "FastAPI + WebSocket gateways",
+      ],
+      dataOps: [
+        "Docker / Docker-compose",
+        "AWS (ECS, Fargate, S3)",
+        "Streamlit / Gradio",
+        "CI/CD Vercel & GitHub Actions",
+      ],
+      machineLearning: [
+        "Algorithmes supervisés & non-supervisés",
+        "Scikit-learn",
+        "Feature Engineering",
+        "Model Selection & Validation",
+        "Hyperparameter Tuning",
+        "Ensemble Methods",
+      ],
+      deepLearning: [
+        "TensorFlow",
+        "PyTorch",
+        "Fine-tuning",
+        "LoRA & QLoRA",
+        "Transformers (Hugging Face)",
+        "Transfer Learning",
+      ],
+    },
+  },
+  formations: {
+    title: "Formations",
+    subtitle: "Mon parcours académique en IA, Machine Learning et Data Science",
+    focus: "Focus",
+    formations: [
+      {
+        degree: "Licence Informatique",
+        institution: "Aix‑Marseille Université",
+        years: "2019‑2022",
+        focus: "Informatique générale",
+        courses: [
+          "Réseaux",
+          "Développement logiciel",
+          "Complexité",
+          "Statistiques",
+          "Probabilités",
+          "Clean code",
+        ],
+      },
+      {
+        degree: "Master Recherche IA & Machine/Deep Learning",
+        institution: "AMU & École Centrale de Marseille",
+        years: "2022‑2024",
+        focus: "Recherche en intelligence artificielle",
+        courses: [
+          "Probabilités & Statistiques avancées",
+          "Machine Learning (SVM, XGBoost, RF…)",
+          "Deep Learning (CNN, RNN, Transformers, GAN…)",
+          "Optimisation & Recherche opérationnelle",
+          "Vision par ordinateur",
+          "Traitement du signal",
+          "Apprentissage par renforcement",
+        ],
+      },
+      {
+        degree: "Mastère Chef de Projet IA",
+        institution: "Groupe Gema — IA School",
+        years: "2024‑2025",
+        focus: "Gestion de projet IA",
+        courses: [
+          "Cloud (AWS)",
+          "Gestion de projet",
+          "Aspects juridiques de l'IA",
+          "Machine Learning",
+          "Deep Learning",
+        ],
+      },
+    ],
+  },
+  projects: {
+    title: "Mes projets",
+    subtitle: "Découvrez mes projets en IA générative, computer vision et agents intelligents",
+    context: "Contexte",
+    objective: "Objectif",
+    solution: "Solution",
+    confidential: "Confidentiel",
+    viewProject: "Voir le projet",
+    filters: {
+      all: "Tous",
+      genai: "Gen AI",
+      rag: "RAG",
+      cv: "Computer Vision",
+      research: "Recherche",
+    },
+    projectsCount: "projet",
+    projectsCountPlural: "projets",
+    projects: [
+      {
+        title: "Système de recherche de documents avec chatbot RAG intégré",
+        organization: "IDEMIA France SAS",
+        tags: ["GenIA", "Retrieval Augmented Generation"],
+        year: 2025,
+        context:
+          "Les ingénieurs du support CPS consacrent beaucoup de temps à chercher l'information dans la documentation interne.",
+        objective:
+          "Accélérer l'accès à l'information et augmenter la productivité des équipes.",
+        solution:
+          "Combinaison de recherche lexicale (BM25) et sémantique, puis génération de réponses contextualisées par LLaMA-3.2-3B via LlamaCPP.",
+        technologies: [
+          "Redis",
+          "LangChain",
+          "Chroma DB",
+          "Streamlit",
+          "FastAPI",
+          "Uvicorn",
+          "Docker",
+          "spaCy",
+          "pymupdf",
+          "RecursiveCharacterTextSplitter",
+          "BERT",
+        ],
+      },
+      {
+        title: "RAG Chat System - Application Full-Stack de Chat Intelligent",
+        organization: "Projet personnel",
+        tags: ["GenIA", "RAG", "Full-Stack"],
+        year: 2025,
+        link: "https://github.com/Babou001/projects_RAG_CHAT_SYSTEM",
+        context:
+          "Démonstration d'un système RAG complet avec support multi-modèles pour l'interaction intelligente avec des documents.",
+        objective:
+          "Créer une application de chat permettant d'interroger des documents PDF avec des réponses contextualisées et sourcées.",
+        solution:
+          "Application Full-Stack avec Next.js, FastAPI, Milvus pour la recherche vectorielle, et support de multiples LLMs (OpenAI, Anthropic, Llama local). Modes RAG et chat direct avec streaming temps-réel.",
+        technologies: [
+          "Next.js",
+          "React",
+          "FastAPI",
+          "Milvus",
+          "HuggingFace",
+          "OpenAI",
+          "Anthropic",
+          "Llama",
+          "PyMuPDF",
+          "Docker",
+          "Tailwind CSS",
+        ],
+      },
+      {
+        title: "Classification des attitudes sociales à partir de données temporelles",
+        organization: "LIS-Lab – CNRS",
+        tags: ["Recherche", "Interprétabilité"],
+        year: 2024,
+        context:
+          "Analyse de vidéos de confrontations pour détecter les attitudes sociales (colère chaude, froide, conciliante).",
+        objective:
+          "Construire des modèles robustes et interprétables pour prédire l'attitude sociale.",
+        solution:
+          "Prétraitement, séparation stricte Train/Test, comparaison de SVM, forêts aléatoires, réseaux de neurones ; explications SHAP des features.",
+        technologies: [
+          "Pandas",
+          "NumPy",
+          "Scikit-Learn",
+          "Matplotlib",
+          "Seaborn",
+          "Docker",
+          "OpenSmile",
+          "OpenFace",
+        ],
+      },
+      {
+        title: "Classification non supervisée des modèles Toyota",
+        organization: "Euranova (Hackathon)",
+        tags: ["Hackathon", "Clustering"],
+        year: 2023,
+        context: "Fiches techniques riches et hétérogènes des véhicules Toyota.",
+        objective:
+          "Regrouper automatiquement les véhicules en grandes familles sans étiquettes pré-existantes.",
+        solution:
+          "Vectorisation mixte (champs numériques + embeddings LLM), clustering hiérarchique K-Means++, visualisation t-SNE.",
+        technologies: [
+          "Scikit-Learn",
+          "spaCy",
+          "Hugging Face LLMs",
+          "Python",
+        ],
+      },
+      {
+        title: "Détection multimodale des tours de parole",
+        organization: "Projet personnel",
+        tags: ["Multimodal", "Speech Segmentation"],
+        year: 2024,
+        context: "Pré-requis à la transcription structurée « speaker : texte ».",
+        objective: "Délimiter automatiquement les prises de parole.",
+        solution:
+          "Fusion d'embeddings texte BERT et de features audio (MFCC, pitch, énergie) dans un classifieur transformeur; micro-service FastAPI sur AWS.",
+        technologies: [
+          "HuggingFace Transformers",
+          "librosa",
+          "spaCy",
+          "BERT",
+          "FastAPI",
+          "AWS ECS/Fargate",
+        ],
+      },
+      {
+        title: "Agent IA d'analyse de DataFrames",
+        organization: "LangChain / Pandas",
+        tags: ["Agent IA", "DataFrames"],
+        year: 2025,
+        status: "en cours",
+        context:
+          "Permettre aux équipes métier d'interroger des jeux de données tabulaires en langage naturel.",
+        objective:
+          "Router dynamiquement la requête utilisateur vers l'outil d'analyse approprié.",
+        solution:
+          "Déclaration d'outils LangChain (query_df, describe_df, plot_df) et routing via ToolSelector ; micro-service FastAPI.",
+        technologies: [
+          "LangChain",
+          "pandas",
+          "pandasql",
+          "Matplotlib",
+          "Python",
+          "FastAPI",
+        ],
+      },
+      {
+        title: "Détection de déchets par YOLOv8",
+        organization: "Projet personnel",
+        tags: ["Computer Vision", "YOLOv8"],
+        year: 2024,
+        context:
+          "Reconnaître et localiser des types d'ordures pour un usage environnemental.",
+        objective:
+          "Déployer un service de détection temps-réel sur images ou flux vidéo.",
+        solution:
+          "Fine-tune YOLOv8 sur TACO + dataset maison ; API FastAPI ; visualisation Streamlit ; conteneurisation Docker (GPU/CPU).",
+        technologies: [
+          "YOLOv8",
+          "OpenCV",
+          "Streamlit",
+          "FastAPI",
+          "Python",
+          "Docker",
+        ],
+      },
+    ],
+  },
+  contact: {
+    title: "Contact",
+    description: "Un projet, une question ? Discutons-en !",
+    cta: "Écrivez-moi",
+    form: {
+      name: "Nom",
+      namePlaceholder: "Votre nom",
+      email: "Email",
+      emailPlaceholder: "votre@email.com",
+      message: "Message",
+      messagePlaceholder: "Votre message...",
+      submit: "Envoyer le message",
+    },
+  },
+};
+
+export type Translations = typeof fr;
