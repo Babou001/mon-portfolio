@@ -101,7 +101,6 @@
 
   body {
     @apply bg-background text-foreground;
-    cursor: none; /* Custom cursor will replace default */
   }
 }
 
