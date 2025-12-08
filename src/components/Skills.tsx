@@ -1,12 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
-import { Brain, BookOpen, Eye, Bot, TrendingUp, Cpu } from "lucide-react";
+import { Brain, BookOpen, Eye, Bot, TrendingUp, Cpu, type LucideIcon } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageProvider";
 import SkillsRadar from "./SkillsRadar";
 
 type SkillCategory = {
   titleKey: "llmRag" | "computerVision" | "aiAgents" | "dataOps" | "machineLearning" | "deepLearning";
-  icon: React.ElementType;
+  icon: LucideIcon;
   itemsKey: "llmRag" | "computerVision" | "aiAgents" | "dataOps" | "machineLearning" | "deepLearning";
 };
 
@@ -122,7 +122,7 @@ export default function Skills() {
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.5 }}
               >
-                <Icon className="w-6 h-6 text-primary" />
+                <Icon className="w-6 h-6 text-primary" aria-hidden="true" />
               </motion.div>
               <h3 className="text-xl font-bold text-foreground">{t.skills[titleKey]}</h3>
             </motion.div>
