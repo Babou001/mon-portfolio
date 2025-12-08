@@ -22,7 +22,8 @@ export default function Projects() {
         project.tags.some((tag) =>
           tag.toLowerCase().includes(activeFilter.toLowerCase()) ||
           (activeFilter === "genai" && tag.toLowerCase().includes("genia")) ||
-          (activeFilter === "cv" && tag.toLowerCase().includes("computer vision"))
+          (activeFilter === "cv" && tag.toLowerCase().includes("computer vision")) ||
+          (activeFilter === "research" && tag.toLowerCase().includes("recherche"))
         )
       );
 
