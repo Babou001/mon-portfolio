@@ -80,7 +80,7 @@ function NeuralNetwork() {
 
       {/* Connections (lines) */}
       {connections.map(([i, j], index) => (
-        <Line
+        <ConnectionLine
           key={index}
           start={[
             positions[i * 3],
@@ -98,35 +98,18 @@ function NeuralNetwork() {
   );
 }
 
-function Line({ start, end }: { start: number[]; end: number[] }) {
-  const ref = useRef<THREE.Line>(null);
-
-  useFrame(() => {
-    if (!ref.current) return;
-    ref.current.rotation.y += 0.001;
-  });
-
+function ConnectionLine({ start, end }: { start: number[]; end: number[] }) {
   const points = useMemo(() => {
-    return [new THREE.Vector3(...start), new THREE.Vector3(...end)];
+    return [new THREE.Vector3(...(start as [number, number, number])), new THREE.Vector3(...(end as [number, number, number]))];
   }, [start, end]);
 
+  const geometry = useMemo(() => {
+    const geom = new THREE.BufferGeometry().setFromPoints(points);
+    return geom;
+  }, [points]);
+
   return (
-    <line ref={ref}>
-      <bufferGeometry>
-        <bufferAttribute
-          attach="attributes-position"
-          count={points.length}
-          array={new Float32Array(points.flatMap((p) => [p.x, p.y, p.z]))}
-          itemSize={3}
-        />
-      </bufferGeometry>
-      <lineBasicMaterial
-        color="#00d4ff"
-        transparent
-        opacity={0.15}
-        depthWrite={false}
-      />
-    </line>
+    <primitive object={new THREE.Line(geometry, new THREE.LineBasicMaterial({ color: "#00d4ff", transparent: true, opacity: 0.15, depthWrite: false }))} />
   );
 }
 
