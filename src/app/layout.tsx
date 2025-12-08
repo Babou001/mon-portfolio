@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageProvider";
-import CustomCursor from "@/components/CustomCursor";
 import PageLoader from "@/components/PageLoader";
 import type { Metadata } from "next";
 
@@ -32,7 +31,6 @@ export default function RootLayout({
       >
         <LanguageProvider>
           <PageLoader />
-          <CustomCursor />
           {children}
         </LanguageProvider>
       </body>
