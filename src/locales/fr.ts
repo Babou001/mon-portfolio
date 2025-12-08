@@ -126,6 +126,7 @@ export const fr = {
     solution: "Solution",
     confidential: "Confidentiel",
     viewProject: "Voir le projet",
+    flipHint: "Cliquer pour détails",
     filters: {
       all: "Tous",
       genai: "Gen AI",

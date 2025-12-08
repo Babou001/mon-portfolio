@@ -128,6 +128,7 @@ export const en: Translations = {
     solution: "Solution",
     confidential: "Confidential",
     viewProject: "View project",
+    flipHint: "Click for details",
     filters: {
       all: "All",
       genai: "Gen AI",

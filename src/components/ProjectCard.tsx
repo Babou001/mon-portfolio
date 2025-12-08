@@ -126,7 +126,7 @@ export default function ProjectCard({ project }: { project: Project }) {
               {/* Flip indicator */}
               <div className="absolute bottom-6 right-6 flex items-center gap-2 text-primary/60 text-sm">
                 <RotateCcw className="w-4 h-4" />
-                <span>Cliquer pour détails</span>
+                <span>{t.projects.flipHint}</span>
               </div>
             </div>
 
