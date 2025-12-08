@@ -49,7 +49,6 @@ function NeuralNetwork() {
     for (let i = 0; i < positions.length / 3; i++) {
       const x = positions[i * 3];
       const y = positions[i * 3 + 1];
-      const z = positions[i * 3 + 2];
 
       // Apply simplex noise for organic movement
       const noiseX = noise3D(x * 0.5, y * 0.5, time) * 0.3;

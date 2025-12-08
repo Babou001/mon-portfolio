@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Linkedin, Send } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageProvider";
 
 export default function Contact() {
