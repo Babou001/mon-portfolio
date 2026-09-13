@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowDownCircle, Mail, Briefcase } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageProvider";
@@ -26,8 +27,15 @@ export default function Hero() {
         }}
       >
         <div className="relative w-40 h-40 rounded-full gradient-animated p-1 pulse-glow">
-          <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
-            <span className="text-6xl font-bold text-holographic">BS</span>
+          <div className="relative w-full h-full rounded-full overflow-hidden bg-background">
+            <Image
+              src="/avatar.jpg"
+              alt="Babou Seye"
+              fill
+              sizes="160px"
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
 
