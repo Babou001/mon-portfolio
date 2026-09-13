@@ -1,8 +1,10 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Send } from "lucide-react";
+import { Mail, Linkedin, Send, Loader2, CheckCircle2, XCircle } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageProvider";
+
+type SubmitStatus = "idle" | "sending" | "success" | "error";
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -11,11 +13,34 @@ export default function Contact() {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState<SubmitStatus>("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Pour l'instant, ouvre juste le client email
-    window.location.href = `mailto:e.b.seye@gmail.com?subject=Contact from ${formData.name}&body=${formData.message}`;
+    setStatus("sending");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          subject: `Portfolio contact from ${formData.name}`,
+          from_name: formData.name,
+          ...formData,
+        }),
+      });
+      const result = await res.json();
+
+      if (result.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   const socialLinks = [
@@ -151,25 +176,55 @@ export default function Contact() {
           {/* Submit Button */}
           <motion.button
             type="submit"
-            className="w-full px-8 py-4 rounded-lg bg-primary text-background font-bold text-lg glow-primary cursor-pointer group relative overflow-hidden"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            disabled={status === "sending"}
+            className="w-full px-8 py-4 rounded-lg bg-primary text-background font-bold text-lg glow-primary cursor-pointer group relative overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed"
+            whileHover={{ scale: status === "sending" ? 1 : 1.02 }}
+            whileTap={{ scale: status === "sending" ? 1 : 0.98 }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.9 }}
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
-              <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              {t.contact.form.submit}
+              {status === "sending" ? (
+                <>
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  {t.contact.form.sending}
+                </>
+              ) : (
+                <>
+                  <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  {t.contact.form.submit}
+                </>
+              )}
             </span>
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-secondary to-accent"
               initial={{ x: "-100%" }}
-              whileHover={{ x: 0 }}
+              whileHover={{ x: status === "sending" ? "-100%" : 0 }}
               transition={{ duration: 0.3 }}
             />
           </motion.button>
+
+          {/* Status feedback */}
+          {(status === "success" || status === "error") && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className={`flex items-center gap-2 text-sm font-medium px-4 py-3 rounded-lg ${
+                status === "success"
+                  ? "bg-accent/10 text-accent border border-accent/30"
+                  : "bg-destructive/10 text-destructive border border-destructive/30"
+              }`}
+            >
+              {status === "success" ? (
+                <CheckCircle2 className="w-4 h-4 shrink-0" />
+              ) : (
+                <XCircle className="w-4 h-4 shrink-0" />
+              )}
+              {status === "success" ? t.contact.form.success : t.contact.form.error}
+            </motion.div>
+          )}
         </motion.form>
 
         {/* Social Links */}

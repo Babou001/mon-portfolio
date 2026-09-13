@@ -4,6 +4,7 @@ export const en: Translations = {
   nav: {
     home: "Home",
     skills: "Skills",
+    experience: "Experience",
     formations: "Education",
     projects: "Projects",
     contact: "Contact",
@@ -70,6 +71,94 @@ export const en: Translations = {
         "Transfer Learning",
       ],
     },
+  },
+  experience: {
+    title: "Professional Experience",
+    subtitle: "From research lab to production, my journey in AI engineering",
+    missions: "Missions",
+    technologies: "Technologies",
+    present: "present",
+    items: [
+      {
+        role: "Machine Learning Engineer",
+        company: "Arche MC2",
+        location: "Aix-en-Provence, France",
+        contractType: "Full-time (CDI)",
+        period: "January 2026 – present",
+        current: true,
+        missions: [
+          "Design and industrialization of end-to-end ML pipelines: from model training (PyTorch, TensorFlow, tracked via MLflow) to deployment and API exposure (FastAPI), for AI products (chatbots, agents, intelligent systems)",
+          "Orchestration and scaling with Docker Swarm / Kubernetes",
+          "Real-time monitoring via Prometheus & Grafana",
+          "Development of front-end (JavaScript) supervision dashboards",
+        ],
+        technologies: [
+          "PyTorch",
+          "TensorFlow",
+          "MLflow",
+          "FastAPI",
+          "Docker Swarm",
+          "Kubernetes",
+          "Prometheus",
+          "Grafana",
+          "JavaScript",
+        ],
+      },
+      {
+        role: "Generative AI & Deep Learning Engineer",
+        company: "IDEMIA France SAS",
+        location: "Paris, La Défense",
+        contractType: "Work-study (Alternance)",
+        period: "October 2024 – December 2025",
+        missions: [
+          "Research and development of generative AI solutions: RAG Chatbot, AI Assistant, AI Agent",
+          "Data analysis and processing",
+          "Evaluation and interpretation of results",
+          "Deployment of models to production",
+        ],
+        technologies: [
+          "LangChain",
+          "FastAPI",
+          "Redis",
+          "PostgreSQL",
+          "TensorFlow",
+          "PyTorch",
+          "Scikit-Learn",
+          "Pandas / Polars",
+          "Milvus",
+          "Docker",
+          "AWS",
+        ],
+      },
+      {
+        role: "R&D Data Scientist",
+        company: "TALEP – LIS Lab (CNRS)",
+        location: "Marseille",
+        contractType: "Research internship",
+        period: "April 2024 – September 2024",
+        missions: [
+          "Analysis of verbal and non-verbal behaviors of people in conflict situations using artificial intelligence and machine learning methods",
+          "Feature extraction from audiovisual data (OpenSmile, OpenFace)",
+          "Analysis and cleaning of the extracted data",
+          "Design and comparison of several AI models for classification",
+          "Application of interpretability methods on the best model to analyze individuals' behavioral features",
+        ],
+      },
+      {
+        role: "Machine Learning / NLP Engineer",
+        company: "LIS Lab",
+        location: "Marseille",
+        contractType: "Research internship",
+        period: "May 2023 – September 2023",
+        missions: [
+          "Development of a deep learning-based model to solve the coreference resolution problem in text",
+          "State of the art on coreference resolution in text",
+          "Analysis and preparation of training data",
+          "Fine-tuning of an LSTM-based neural model",
+          "Evaluation of the model's contribution to a question generation task",
+        ],
+      },
+    ],
   },
   formations: {
     title: "Education",
@@ -144,6 +233,7 @@ export const en: Translations = {
         organization: "IDEMIA France SAS",
         tags: ["GenAI", "Retrieval Augmented Generation"],
         year: 2025,
+        image: "/projects/rag-idemia.jpg",
         context:
           "CPS support engineers spend a lot of time searching for information in internal documentation.",
         objective:
@@ -170,6 +260,7 @@ export const en: Translations = {
         tags: ["GenAI", "RAG", "Full-Stack"],
         year: 2025,
         link: "https://github.com/Babou001/projects_RAG_CHAT_SYSTEM",
+        image: "/projects/rag-chat-system.jpg",
         context:
           "Demonstration of a complete RAG system with multi-model support for intelligent document interaction.",
         objective:
@@ -195,6 +286,7 @@ export const en: Translations = {
         organization: "LIS-Lab – CNRS",
         tags: ["Research", "Interpretability"],
         year: 2024,
+        image: "/projects/attitudes-sociales.jpg",
         context:
           "Analysis of confrontation videos to detect social attitudes (hot anger, cold anger, conciliatory).",
         objective:
@@ -217,6 +309,7 @@ export const en: Translations = {
         organization: "Euranova (Hackathon)",
         tags: ["Hackathon", "Clustering"],
         year: 2023,
+        image: "/projects/clustering-toyota.jpg",
         context: "Rich and heterogeneous technical specifications of Toyota vehicles.",
         objective:
           "Automatically group vehicles into major families without pre-existing labels.",
@@ -234,6 +327,7 @@ export const en: Translations = {
         organization: "Personal project",
         tags: ["Multimodal", "Speech Segmentation"],
         year: 2024,
+        image: "/projects/tours-de-parole.jpg",
         context: "Prerequisite for structured transcription 'speaker: text'.",
         objective: "Automatically delimit speaking turns.",
         solution:
@@ -253,6 +347,8 @@ export const en: Translations = {
         tags: ["AI Agent", "DataFrames"],
         year: 2025,
         status: "in progress",
+        link: "https://github.com/Babou001/csv_analysis_agent",
+        image: "/projects/agents-dataframe.jpg",
         context:
           "Enable business teams to query tabular datasets in natural language.",
         objective:
@@ -273,6 +369,7 @@ export const en: Translations = {
         organization: "Personal project",
         tags: ["Computer Vision", "YOLOv8"],
         year: 2024,
+        image: "/projects/yolov8-dechets.jpg",
         context:
           "Recognize and locate types of waste for environmental use.",
         objective:
@@ -302,6 +399,13 @@ export const en: Translations = {
       message: "Message",
       messagePlaceholder: "Your message...",
       submit: "Send message",
+      sending: "Sending...",
+      success: "Message sent! I'll get back to you shortly.",
+      error: "Something went wrong. Please try again or email me directly at e.b.seye@gmail.com.",
     },
+  },
+  footer: {
+    rights: "All rights reserved.",
+    madeWith: "Made with",
   },
 };

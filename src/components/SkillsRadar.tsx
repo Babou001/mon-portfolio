@@ -91,7 +91,7 @@ export default function SkillsRadar({ skills }: SkillsRadarProps) {
             cy={center}
             r={(level / 100) * maxRadius}
             fill="none"
-            stroke="rgba(0, 212, 255, 0.1)"
+            stroke="color-mix(in srgb, var(--primary) 10%, transparent)"
             strokeWidth="1"
           />
         ))}
@@ -106,7 +106,7 @@ export default function SkillsRadar({ skills }: SkillsRadarProps) {
               y1={center}
               x2={x}
               y2={y}
-              stroke="rgba(0, 212, 255, 0.15)"
+              stroke="color-mix(in srgb, var(--primary) 15%, transparent)"
               strokeWidth="1"
             />
           );
@@ -115,8 +115,8 @@ export default function SkillsRadar({ skills }: SkillsRadarProps) {
         {/* Data polygon */}
         <motion.polygon
           points={polygonPoints}
-          fill="rgba(0, 212, 255, 0.2)"
-          stroke="#00d4ff"
+          fill="color-mix(in srgb, var(--primary) 20%, transparent)"
+          stroke="var(--primary)"
           strokeWidth="2"
           initial={{ opacity: 0, scale: 0 }}
           animate={isVisible ? { opacity: 1, scale: 1 } : {}}
@@ -133,7 +133,7 @@ export default function SkillsRadar({ skills }: SkillsRadarProps) {
               cx={x}
               cy={y}
               r="4"
-              fill="#00d4ff"
+              fill="var(--primary)"
               initial={{ opacity: 0, scale: 0 }}
               animate={isVisible ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
@@ -152,7 +152,7 @@ export default function SkillsRadar({ skills }: SkillsRadarProps) {
               y={y}
               textAnchor="middle"
               dominantBaseline="middle"
-              fill="#e0e0e0"
+              fill="var(--foreground)"
               fontSize="12"
               fontWeight="600"
               initial={{ opacity: 0 }}
@@ -175,7 +175,7 @@ export default function SkillsRadar({ skills }: SkillsRadarProps) {
                 y={y}
                 textAnchor="middle"
                 dominantBaseline="middle"
-                fill="#00d4ff"
+                fill="var(--primary)"
                 fontSize="10"
                 fontWeight="700"
                 initial={{ opacity: 0 }}

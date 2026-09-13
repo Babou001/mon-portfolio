@@ -1,14 +1,16 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, Globe, Sun, Moon } from "lucide-react";
 import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageProvider";
+import { useTheme } from "@/contexts/ThemeProvider";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -19,6 +21,7 @@ export default function Navbar() {
   const links = [
     { href: "#hero", label: t.nav.home },
     { href: "#skills", label: t.nav.skills },
+    { href: "#experience", label: t.nav.experience },
     { href: "#formations", label: t.nav.formations },
     { href: "#projects", label: t.nav.projects },
     { href: "#contact", label: t.nav.contact },
@@ -49,7 +52,7 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
       >
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-3 sm:px-6">
           {/* Logo avec badge */}
           <Link href="#hero" className="group flex items-center gap-3 cursor-pointer">
             <motion.div
@@ -104,12 +107,39 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right Side: Language + Mobile Menu */}
-          <div className="flex items-center gap-3">
+          {/* Right Side: Theme + Language + Mobile Menu */}
+          <div className="flex items-center gap-1.5 sm:gap-3">
+            {/* Theme Toggle */}
+            <motion.button
+              onClick={toggleTheme}
+              className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 hover:border-primary/40 cursor-pointer relative overflow-hidden shrink-0"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Basculer le thème clair/sombre"
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 hover:opacity-100"
+                transition={{ duration: 0.3 }}
+              />
+              <motion.div
+                key={theme}
+                initial={{ rotate: -90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className="relative z-10"
+              >
+                {theme === "dark" ? (
+                  <Moon className="w-4 h-4 text-primary" />
+                ) : (
+                  <Sun className="w-4 h-4 text-primary" />
+                )}
+              </motion.div>
+            </motion.button>
+
             {/* Language Toggle */}
             <motion.button
               onClick={() => setLanguage(language === "fr" ? "en" : "fr")}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 hover:border-primary/40 cursor-pointer text-sm font-medium group overflow-hidden relative"
+              className="flex items-center gap-2 px-2.5 py-2 sm:px-4 rounded-lg bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 hover:border-primary/40 cursor-pointer text-sm font-medium group overflow-hidden relative shrink-0"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               aria-label="Changer de langue"
@@ -124,7 +154,7 @@ export default function Navbar() {
                 initial={{ rotateY: 90, opacity: 0 }}
                 animate={{ rotateY: 0, opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                className="text-foreground font-semibold relative z-10 uppercase"
+                className="text-foreground font-semibold relative z-10 uppercase hidden sm:inline"
               >
                 {language === "fr" ? "EN" : "FR"}
               </motion.span>
@@ -133,7 +163,7 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <motion.button
               onClick={() => setOpen(!open)}
-              className="md:hidden rounded-lg p-2 glass-strong border border-primary/20 hover:border-primary/40 transition-all cursor-pointer"
+              className="md:hidden shrink-0 rounded-lg p-2 glass-strong border border-primary/20 hover:border-primary/40 transition-all cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               aria-label="Menu mobile"

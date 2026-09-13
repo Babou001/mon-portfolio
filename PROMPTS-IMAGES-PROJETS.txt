@@ -1,0 +1,210 @@
+================================================================================
+PROMPTS IA — IMAGES DES 7 PROJETS DU PORTFOLIO
+Babou Seye — portfolio cyber/néon
+================================================================================
+
+--------------------------------------------------------------------------------
+A LIRE EN PREMIER — CONSIGNES TECHNIQUES
+--------------------------------------------------------------------------------
+
+FORMAT ATTENDU
+  - Ratio          : 16:9 (paysage)
+  - Taille mini    : 1600 x 900 px  (ideal 1920 x 1080)
+  - Fichier        : .webp de preference, sinon .jpg (evite .png, 3 a 5x plus lourd)
+  - Poids cible    : < 250 Ko par image apres export
+
+OU LES DEPOSER
+  Mets les 7 fichiers dans un dossier a la racine du projet :
+      mon-portfolio/public/projects/
+
+NOMS DE FICHIERS — A RESPECTER EXACTEMENT
+  Le code ira chercher ces noms precis. Si tu changes un nom, dis-le moi.
+
+      1. rag-idemia.webp
+      2. rag-chat-system.webp
+      3. attitudes-sociales.webp
+      4. clustering-toyota.webp
+      5. tours-de-parole.webp
+      6. agent-dataframes.webp
+      7. yolov8-dechets.webp
+
+CONSEILS DE GENERATION
+  - Genere en anglais : tous les modeles d'image sont bien meilleurs en anglais.
+  - N'ECRIS JAMAIS DE TEXTE dans l'image. Les modeles produisent du faux texte
+    illisible, et ca fait tout de suite amateur sur un portfolio. Les prompts
+    ci-dessous contiennent deja "no text, no letters, no numbers".
+  - Garde la meme seed / le meme style entre les 7 images. La coherence visuelle
+    de la serie compte plus que la beaute de chaque image prise isolement.
+  - Les images seront affichees en haut des cartes, en assez petit (~500px de
+    large sur desktop). Evite les scenes chargees de details fins : privilegie
+    une composition simple, lisible en miniature.
+  - Prevois que le bas de l'image sera legerement assombri par un degrade vers
+    le fond du site. Ne mets rien d'important dans le tiers inferieur.
+
+
+--------------------------------------------------------------------------------
+LE STYLE COMMUN — A COLLER DEVANT CHAQUE PROMPT
+--------------------------------------------------------------------------------
+
+Si ton generateur a un champ "style" separe, mets ce bloc dedans. Sinon, colle-le
+au debut de chacun des 7 prompts.
+
+STYLE:
+Abstract technical illustration, dark cyberpunk aesthetic, deep near-black
+background (#0a0a0f), glowing neon accents in electric cyan (#00d4ff), neon
+violet (#b967ff) and tech green (#05ffa1), thin luminous lines, subtle volumetric
+glow, depth of field, cinematic wide composition, clean and minimal, high-end
+tech editorial look, 16:9. No text, no letters, no numbers, no logos, no human
+faces, no watermark.
+
+NEGATIVE PROMPT (si le champ existe) :
+text, letters, words, numbers, typography, watermark, logo, signature, ui
+mockup, screenshot, cluttered, busy, low contrast, washed out, stock photo,
+human face, hands, cartoon, childish
+
+
+================================================================================
+LES 7 PROMPTS
+================================================================================
+
+
+--------------------------------------------------------------------------------
+[1] rag-idemia.webp
+Systeme de recherche de documents avec chatbot RAG integre — IDEMIA France SAS
+Tags : GenIA, Retrieval Augmented Generation — 2025
+--------------------------------------------------------------------------------
+
+PROMPT:
+A vast dark archive of floating translucent document pages suspended in deep
+space, arranged in a curved wall. Thin glowing cyan threads shoot out from a
+single bright focal point and connect to a handful of specific pages, as if
+retrieving them from the mass. The selected pages glow brighter, edged in violet.
+Faint particles drift between them. Sense of instant search through an enormous
+corpus.
+
+INTENTION: la recherche documentaire massive + la recuperation ciblee (le "R" de
+RAG). C'est ton projet phare en entreprise, soigne celui-la.
+
+
+--------------------------------------------------------------------------------
+[2] rag-chat-system.webp
+RAG Chat System — Application Full-Stack de Chat Intelligent — Projet personnel
+Tags : GenIA, RAG, Full-Stack — 2025
+--------------------------------------------------------------------------------
+
+PROMPT:
+Two glowing abstract panels facing each other in dark space: on the left a stack
+of layered translucent document sheets emitting cyan light, on the right a
+vertical flow of luminous green data streaming upward like a live response being
+generated token by token. A bright violet arc bridges the two panels. Vector
+embedding points scattered as a soft constellation in the background.
+
+INTENTION: le dialogue documents <-> reponse streamee, et le cote full-stack
+(deux moities reliees).
+
+
+--------------------------------------------------------------------------------
+[3] attitudes-sociales.webp
+Classification des attitudes sociales a partir de donnees temporelles
+LIS-Lab – CNRS
+Tags : Recherche, Interpretabilite — 2024
+--------------------------------------------------------------------------------
+
+PROMPT:
+Abstract human silhouettes rendered only as constellations of glowing facial
+landmark points and motion-tracking lines, two figures facing each other in
+confrontation, no visible skin or features. Overlapping waveform ribbons in cyan
+and violet flow between them along a horizontal time axis. Warm red-orange glow
+on one figure, cold blue glow on the other, suggesting opposite emotional states.
+Scientific, analytical, restrained.
+
+INTENTION: l'analyse comportementale multimodale + l'axe temporel. Le contraste
+chaud/froid renvoie directement a "colere chaude / colere froide".
+ATTENTION: insiste sur "no visible face, only tracking points" — sinon le modele
+va generer de vrais visages et ca jurera avec le reste de la serie.
+
+
+--------------------------------------------------------------------------------
+[4] clustering-toyota.webp
+Classification non supervisee des modeles Toyota — Euranova (Hackathon)
+Tags : Hackathon, Clustering — 2023
+--------------------------------------------------------------------------------
+
+PROMPT:
+A dark three-dimensional scatter plot floating in space, hundreds of small
+luminous points naturally grouping into four or five distinct clusters. Each
+cluster glows a different color: cyan, violet, tech green, soft pink. Faint
+translucent hulls wrap each group. A few unassigned points drift in the empty
+space between clusters. Elegant data visualization, generous negative space.
+
+INTENTION: le clustering non supervise / la projection t-SNE. Composition la plus
+simple des 7, elle sera tres lisible en miniature.
+NOTE: pas de voiture, pas de logo Toyota (marque deposee). On reste sur l'abstrait.
+
+
+--------------------------------------------------------------------------------
+[5] tours-de-parole.webp
+Detection multimodale des tours de parole — Projet personnel
+Tags : Multimodal, Speech Segmentation — 2024
+--------------------------------------------------------------------------------
+
+PROMPT:
+A long horizontal audio waveform stretching across dark space, glowing cyan.
+The waveform is cleanly cut into alternating colored segments — cyan blocks and
+violet blocks — separated by sharp vertical light beams marking the boundaries.
+Above the waveform, a parallel ribbon of abstract flowing text-like particles
+(no readable characters) runs in sync. Two distinct luminous sources at each end
+of the axis, suggesting two speakers alternating.
+
+INTENTION: la segmentation en tours de parole + la fusion audio/texte.
+ATTENTION: le ruban "text-like" doit rester des particules abstraites, jamais des
+lettres lisibles.
+
+
+--------------------------------------------------------------------------------
+[6] agent-dataframes.webp
+Agent IA d'analyse de DataFrames — LangChain / Pandas (en cours)
+Tags : Agent IA, DataFrames — 2025
+--------------------------------------------------------------------------------
+
+PROMPT:
+A glowing central orb of violet light floating above a dark translucent grid of
+tabular data. Three luminous branches radiate from the orb toward three distinct
+abstract tools: a magnifying lens of light, a bar chart made of glowing bars, and
+a flowing stream of green data. The grid below reacts, some rows lighting up in
+cyan. Sense of an intelligent router dispatching a request to the right tool.
+
+INTENTION: le tool-routing de l'agent (query_df / describe_df / plot_df) au-dessus
+d'un DataFrame. C'est le seul projet "en cours", l'image peut etre un peu plus
+aerienne.
+
+
+--------------------------------------------------------------------------------
+[7] yolov8-dechets.webp
+Detection de dechets par YOLOv8 — Projet personnel
+Tags : Computer Vision, YOLOv8 — 2024
+--------------------------------------------------------------------------------
+
+PROMPT:
+Dark scene with scattered abstract waste objects — bottles, cans, wrappers —
+rendered as low-poly luminous shapes. Each object is precisely enclosed in a
+thin glowing rectangular detection box, cyan and green, with small bright corner
+brackets. Faint scan lines sweep across the scene. Clean computer-vision
+inference look, technical and precise.
+
+INTENTION: la detection d'objets avec bounding boxes, immediatement reconnaissable.
+ATTENTION: pas de score de confiance affiche au-dessus des boites (ce serait du
+texte). Juste les cadres.
+
+
+================================================================================
+QUAND TU AS LES IMAGES
+================================================================================
+
+1. Depose les 7 fichiers dans  public/projects/  avec les noms exacts ci-dessus.
+2. Dis-le moi, je m'occupe du reste : je refais les cartes projets avec l'image
+   en haut et la description en dessous, je gere le lazy-loading, les tailles
+   responsive et le fallback si une image manque.
+
+Si tu n'arrives a en generer que 4 ou 5, ce n'est pas bloquant : je prevois un
+visuel de repli pour les projets sans image. Envoie-moi ce que tu as.

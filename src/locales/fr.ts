@@ -2,6 +2,7 @@ export const fr = {
   nav: {
     home: "Accueil",
     skills: "Compétences",
+    experience: "Expérience",
     formations: "Formations",
     projects: "Projets",
     contact: "Contact",
@@ -68,6 +69,94 @@ export const fr = {
         "Transfer Learning",
       ],
     },
+  },
+  experience: {
+    title: "Expérience professionnelle",
+    subtitle: "Du laboratoire de recherche à la production, mon parcours en ingénierie IA",
+    missions: "Missions",
+    technologies: "Technologies",
+    present: "présent",
+    items: [
+      {
+        role: "Machine Learning Engineer",
+        company: "Arche MC2",
+        location: "Aix-en-Provence, France",
+        contractType: "CDI",
+        period: "Janvier 2026 – présent",
+        current: true,
+        missions: [
+          "Conception et industrialisation de pipelines ML de bout en bout : de l'entraînement des modèles (PyTorch, TensorFlow, suivi via MLflow) au déploiement et à l'exposition via API (FastAPI), pour des produits IA (chatbots, agents, systèmes intelligents)",
+          "Orchestration et mise à l'échelle avec Docker Swarm / Kubernetes",
+          "Monitoring temps réel via Prometheus & Grafana",
+          "Développement de dashboards front (JavaScript) de supervision",
+        ],
+        technologies: [
+          "PyTorch",
+          "TensorFlow",
+          "MLflow",
+          "FastAPI",
+          "Docker Swarm",
+          "Kubernetes",
+          "Prometheus",
+          "Grafana",
+          "JavaScript",
+        ],
+      },
+      {
+        role: "Ingénieur IA générative et Deep Learning",
+        company: "IDEMIA France SAS",
+        location: "Paris, La Défense",
+        contractType: "Alternance",
+        period: "Octobre 2024 – Décembre 2025",
+        missions: [
+          "Recherche et développement de solutions d'IA génératives : Chatbot RAG, Assistant IA, Agent IA",
+          "Analyse et traitement des données",
+          "Évaluation et interprétation des résultats",
+          "Déploiement des modèles en production",
+        ],
+        technologies: [
+          "LangChain",
+          "FastAPI",
+          "Redis",
+          "PostgreSQL",
+          "TensorFlow",
+          "PyTorch",
+          "Scikit-Learn",
+          "Pandas / Polars",
+          "Milvus",
+          "Docker",
+          "AWS",
+        ],
+      },
+      {
+        role: "Data Scientist en R&D",
+        company: "TALEP – LIS Lab (CNRS)",
+        location: "Marseille",
+        contractType: "Stage de recherche",
+        period: "Avril 2024 – Septembre 2024",
+        missions: [
+          "Analyse des comportements verbaux et non verbaux de personnes en situation de conflit par des méthodes d'intelligence artificielle et d'apprentissage automatique",
+          "Extraction des caractéristiques à partir des données audiovisuelles (OpenSmile, OpenFace)",
+          "Analyse et nettoyage des données obtenues après l'extraction",
+          "Élaboration et comparaison de plusieurs modèles IA pour la classification",
+          "Application de méthodes d'interprétabilité sur le meilleur modèle pour l'analyse des caractéristiques comportementales des individus",
+        ],
+      },
+      {
+        role: "Machine Learning / NLP Engineer",
+        company: "LIS Lab",
+        location: "Marseille",
+        contractType: "Stage de recherche",
+        period: "Mai 2023 – Septembre 2023",
+        missions: [
+          "Élaboration d'un modèle basé sur le deep learning pour résoudre le problème des coréférences dans un texte",
+          "État de l'art sur la résolution des coréférences dans un texte",
+          "Analyse et préparation des données d'entraînement",
+          "Finetuning d'un modèle neuronal à base de LSTM",
+          "Évaluation de l'apport de ce modèle sur une tâche de génération de question",
+        ],
+      },
+    ],
   },
   formations: {
     title: "Formations",
@@ -142,6 +231,7 @@ export const fr = {
         organization: "IDEMIA France SAS",
         tags: ["GenIA", "Retrieval Augmented Generation"],
         year: 2025,
+        image: "/projects/rag-idemia.jpg",
         context:
           "Les ingénieurs du support CPS consacrent beaucoup de temps à chercher l'information dans la documentation interne.",
         objective:
@@ -168,6 +258,7 @@ export const fr = {
         tags: ["GenIA", "RAG", "Full-Stack"],
         year: 2025,
         link: "https://github.com/Babou001/projects_RAG_CHAT_SYSTEM",
+        image: "/projects/rag-chat-system.jpg",
         context:
           "Démonstration d'un système RAG complet avec support multi-modèles pour l'interaction intelligente avec des documents.",
         objective:
@@ -193,6 +284,7 @@ export const fr = {
         organization: "LIS-Lab – CNRS",
         tags: ["Recherche", "Interprétabilité"],
         year: 2024,
+        image: "/projects/attitudes-sociales.jpg",
         context:
           "Analyse de vidéos de confrontations pour détecter les attitudes sociales (colère chaude, froide, conciliante).",
         objective:
@@ -215,6 +307,7 @@ export const fr = {
         organization: "Euranova (Hackathon)",
         tags: ["Hackathon", "Clustering"],
         year: 2023,
+        image: "/projects/clustering-toyota.jpg",
         context: "Fiches techniques riches et hétérogènes des véhicules Toyota.",
         objective:
           "Regrouper automatiquement les véhicules en grandes familles sans étiquettes pré-existantes.",
@@ -232,6 +325,7 @@ export const fr = {
         organization: "Projet personnel",
         tags: ["Multimodal", "Speech Segmentation"],
         year: 2024,
+        image: "/projects/tours-de-parole.jpg",
         context: "Pré-requis à la transcription structurée « speaker : texte ».",
         objective: "Délimiter automatiquement les prises de parole.",
         solution:
@@ -251,6 +345,8 @@ export const fr = {
         tags: ["Agent IA", "DataFrames"],
         year: 2025,
         status: "en cours",
+        link: "https://github.com/Babou001/csv_analysis_agent",
+        image: "/projects/agents-dataframe.jpg",
         context:
           "Permettre aux équipes métier d'interroger des jeux de données tabulaires en langage naturel.",
         objective:
@@ -271,6 +367,7 @@ export const fr = {
         organization: "Projet personnel",
         tags: ["Computer Vision", "YOLOv8"],
         year: 2024,
+        image: "/projects/yolov8-dechets.jpg",
         context:
           "Reconnaître et localiser des types d'ordures pour un usage environnemental.",
         objective:
@@ -300,7 +397,14 @@ export const fr = {
       message: "Message",
       messagePlaceholder: "Votre message...",
       submit: "Envoyer le message",
+      sending: "Envoi en cours...",
+      success: "Message envoyé ! Je vous répondrai rapidement.",
+      error: "Une erreur est survenue. Réessayez ou écrivez-moi directement à e.b.seye@gmail.com.",
     },
+  },
+  footer: {
+    rights: "Tous droits réservés.",
+    madeWith: "Conçu avec",
   },
 };
 

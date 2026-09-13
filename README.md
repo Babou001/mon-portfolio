@@ -313,5 +313,3 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 - LinkedIn: [El Hadji Babou Seye](https://www.linkedin.com/in/el-hadji-babou-seye-128791281/)
 
 ---
-
-🤖 Développé avec l'aide de [Claude Code](https://claude.com/claude-code)

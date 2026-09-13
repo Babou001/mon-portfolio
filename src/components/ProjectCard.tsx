@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 import { Lock, ExternalLink, RotateCcw } from "lucide-react";
@@ -17,6 +18,7 @@ type Project = {
   status?: string;
   technologies?: string[];
   link?: string;
+  image?: string;
   confidential?: boolean;
 };
 
@@ -60,21 +62,39 @@ export default function ProjectCard({ project }: { project: Project }) {
             className="absolute inset-0 rounded-2xl glass group overflow-hidden"
             style={{ backfaceVisibility: "hidden" }}
           >
-            {/* Gradient header */}
-            <div className="h-32 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 relative overflow-hidden">
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-primary/30 to-transparent"
-                animate={{
-                  x: ["-100%", "100%"],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              />
+            {/* Header: project image or fallback gradient */}
+            <div className="h-44 relative overflow-hidden">
+              {project.image ? (
+                <>
+                  <Image
+                    src={project.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
+                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-background to-transparent" />
+                </>
+              ) : (
+                <>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20" />
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-primary/30 to-transparent"
+                    animate={{
+                      x: ["-100%", "100%"],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
+                </>
+              )}
               {isConfidential && (
-                <Lock className="absolute top-4 right-4 w-6 h-6 text-foreground/40" />
+                <Lock className="absolute top-4 right-4 w-6 h-6 text-foreground/40 drop-shadow" />
               )}
             </div>
 
